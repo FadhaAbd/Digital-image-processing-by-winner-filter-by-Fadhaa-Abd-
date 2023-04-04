@@ -1,0 +1,57 @@
+clc;
+
+clear all;
+
+close all;
+
+
+a=imread('5.jpg');
+a = im2double(a);
+a= rgb2gray(a);
+I = wiener2(a,[2 2]);
+I =imadjust(I,stretchlim(I),[]);
+
+
+b=imread('6.jpg');
+b = im2double(b);
+b= rgb2gray(b);
+B= wiener2(b,[2 2]);
+B =imadjust(B,stretchlim(B),[]);
+
+
+c=imread('7.jpg');
+c = im2double(c);
+c= rgb2gray(c);
+C = wiener2(c,[2 2]);
+C=imadjust(C,stretchlim(C),[]);
+
+
+d=imread('8.jpg');
+d = im2double(d);
+d= rgb2gray(d);
+D = wiener2(d,[2 2]);
+D=imadjust(D,stretchlim(D),[]);
+
+
+figure
+subplot(121),imshow(a);
+subplot(122),imshow(I);
+
+
+
+figure
+subplot(121),imshow(b);
+subplot(122),imshow(B);
+
+figure
+subplot(121),imshow(c);
+subplot(122),imshow(C);
+figure
+subplot(121),imshow(d);
+subplot(122),imshow(D);
+
+
+
+
+
+needed to sharp the edges and add more details with colors
